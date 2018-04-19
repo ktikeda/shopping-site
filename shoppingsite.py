@@ -10,7 +10,7 @@ from flask import Flask, render_template, redirect, flash, session, make_respons
 import jinja2
 
 import melons
-from customers import get_by_email, customer_list
+from customers import get_by_email, all_customers
 
 app = Flask(__name__)
 
@@ -136,7 +136,7 @@ def process_login():
     session['email'] = request.form['email']
     session['pw'] = request.form['password']
 
-    customer = get_by_email(session['email'], customer_list)
+    customer = get_by_email(session['email'], all_customers)
 
     if customer and customer.password == session['pw']:
         session['email'] = customer.email

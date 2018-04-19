@@ -37,7 +37,7 @@ def read_customers_from_file(filepath):
 
     return customers
 
-customer_list = read_customers_from_file('customers.txt')
+all_customers = read_customers_from_file('customers.txt')
 #get_by_email('janet@hotmail.com', customer_list)
 
 
